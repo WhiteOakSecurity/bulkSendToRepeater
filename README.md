@@ -1,14 +1,8 @@
-# addToTLSPassThrough
-Add To TLS Pass Through Extension
-============================
+# bulkSendToRepeater
 
-###### Registers new context menu items to add hosts to the TLS Pass Through setting.
+The bulkSendToRepeater extension adds context menus to Burp Suite's request viewers, allowing requests to be forwarded to the Repeater tool in bulk.
 
----
-This extension adds a new context menu item in the Target, Proxy or Logger tab to add hosts directly to the TLS Pass
-Through setting.
+* Requests may be added using their method and URI as Repeater Tab title (e.g., GET /api/v1/some/endpoint/1), limited to 70 characters, or
+* Requests may be added using standard numbering for the Repeater Tab title
 
-The extension has the following features: 
-- If you right-click in a message editor context, it will use the item from the message editor.
-- If you right-click on multiple Proxy History table items, multiple hosts may be added simultaneously.
-- Regular expressions for each level of subdomain are provided.
+![image](https://github.com/WhiteOakSecurity/bulkSendToRepeater/assets/10437631/a3d09bab-b49b-4710-b163-f1db0fe81250)
