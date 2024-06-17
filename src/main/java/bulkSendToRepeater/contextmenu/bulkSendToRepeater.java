@@ -23,12 +23,16 @@ public class bulkSendToRepeater implements BurpExtension
         logging = api.logging();
         api.userInterface().registerContextMenuItemsProvider(new MyContextMenuItemsProvider(api));
 
-        api.extension().registerUnloadingHandler(new MyExtensionUnloadHandler());
+        //api.extension().registerUnloadingHandler(new MyExtensionUnloadHandler());
     }
-    private class MyExtensionUnloadHandler implements ExtensionUnloadingHandler {
+
+/* Extension loader unnecessary without resources that need unloading.
+        private class MyExtensionUnloadHandler implements ExtensionUnloadingHandler {
 		@Override
 	public void extensionUnloaded() {
             //logging.logToOutput("Extension was unloaded.");
 	}
     }
+*/
 }
+
