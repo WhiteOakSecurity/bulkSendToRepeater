@@ -3,10 +3,10 @@ ExtensionType: 1
 Name: Bulk Send to Repeater
 RepoName: bulk-send-to-repeater
 ScreenVersion: 1.0.1
-SerialVersion: 1
+SerialVersion: 2
 MinPlatformVersion: 4
 ProOnly: False
-Author: Karl S, White Oak Security
+Author: Karl Schuttler, White Oak Security
 ShortDescription: Allow Mass "Send to Repeater" Using Context Menu
 EntryPoint: build/libs/bulk-send-to-repeater-1.0.1.jar
 BuildCommand: ./gradlew jar
