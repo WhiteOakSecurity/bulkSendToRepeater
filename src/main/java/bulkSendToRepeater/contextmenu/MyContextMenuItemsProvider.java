@@ -57,17 +57,27 @@ public class MyContextMenuItemsProvider implements ContextMenuItemsProvider
             titled.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
 
-                    for(HttpRequestResponse requestResponse : requestResponsesFinal) {
+                     for(HttpRequestResponse requestResponse : requestResponsesFinal) {
  
                         burp.api.montoya.http.HttpService requestService = requestResponse.httpService();
                         String method = requestResponse.request().method();
+                        String requestname = "";
+                        
+                        
                         //first 70 characters of path
                         String path = requestResponse.request().path();
                         if(path.length() >= 70){
                             path = path.substring(0,69);
                         }
                         
-                        api.repeater().sendToRepeater(requestResponse.request(), method + " " + path);
+                        for(int i=0;i<requestResponse.request().headers().size();i++) {
+                            if(requestResponse.request().headers().get(i).name().trim().equals("X-Request-Name")) {
+                                requestname = requestResponse.request().headers().get(i).value() + " | ";
+                                break;
+                            }
+                        }
+                            
+                        api.repeater().sendToRepeater(requestResponse.request(), requestname + method + " " + path);
                     }
 
                 }
